@@ -1,6 +1,7 @@
 # svn command
 
 * 在處理自動化時可能需要用到的命令。
+* [參考](reference/README.md)
 
 ---
 
@@ -41,9 +42,9 @@
 
 ---
 
-## auto add un files
+## auto add unversion files
 
-* 判斷未加入svn檔案自動執行 svn ad
+* 判斷未加入svn檔案自動執行 svn add
 
 * shell example:
 

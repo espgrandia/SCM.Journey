@@ -12,11 +12,13 @@
   * 以一行表示一個external列表
 
 * shell example:
+
     ``` sh
     svn propset svn:externals -F ${Externals_List_File} ${Externals_Folder}
     ```
 
 * bat example:
+
     ``` bat
     svn propset svn:externals -F %Externals_List_File% %Externals_Folder%
     ```
@@ -35,6 +37,7 @@
     ```
 
 * bat example:
+
     ``` bat
     svn propset svn:ignore -F %Ignore_List_File%
     ```
@@ -58,6 +61,7 @@
 * 判斷 miss files 自動執行 svn delete
 
 * shell example:
+
     ```sh
     svn st | grep ^! | awk '{print " --force "$2}' | xargs svn rm
     ```

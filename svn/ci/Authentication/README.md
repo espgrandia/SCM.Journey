@@ -28,4 +28,19 @@
 
 ---
 
-## 未完，待續
+## Jenkins 後續處理
+
+* 在 mac client svn commit 需要輸入帳號/密碼
+
+* 有找到外掛 Bindings
+  * 由 jenkins 上面的帳號管理來帶入給 shell 的參數
+  * 實測過帳號密碼是從 log dump 不出來的
+
+* 安裝 Jenkins 外掛套件
+  ![Jenkins 外掛](./pics/00.png)
+
+* Jenkins 專案引用 - 1
+  ![Jenkins 專案引用 - 1](./pics/01.png)
+
+* Jenkins 專案引用 - 2
+  ![Jenkins 專案引用 - 2](./pics/02.png)

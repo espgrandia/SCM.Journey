@@ -20,7 +20,7 @@
 - prepreExported_GitHash_Full: git commit hash 完整內容
   - `git log -1` : 抓取 git 最後 log 的內容，
   - `grep commit` : 擷取第一筆有 commit 內容
-  - `cut -d' '   -f2` : 以空格 ' ' 做分隔，取分隔後第二比內容
+  - `cut -d' '   -f2` : 以空格 ' ' 做分隔，取分隔後第二筆內容
 
 - prepreExported_GitHash_Short : 擷取前八位當做 short 的 hash code
 

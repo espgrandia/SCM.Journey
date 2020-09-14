@@ -72,6 +72,57 @@
 
 目前實測結果，以 `16進位制`轉成`10進位制` 狀況來說，`16進位制`的位數最高到 13 位數，超過會有問題。
 
+實際案例:
+
+- sample code :
+
+  ``` shell
+
+  # 取最新一筆 git log 的 commit hash
+  exported_GitVersionHash_Full="$(git log -1 | grep commit | cut -d' ' -f2)"
+
+  # 取前 13 位數
+  exported_GitVersionHash=${exported_GitVersionHash_Full:0:13}
+
+  # 先將 Hex 轉成全大寫
+  exported_GitVersionHash_HexTo10_Case1=$(echo ${exported_GitVersionHash} | tr '[:lower:]' '[:upper:]')
+
+  # 另一種寫法
+  # exported_GitVersionHash_HexTo10_Case1=`echo ${exported_GitVersionHash} | tr '[:lower:]' '[:upper:]'`
+
+  echo "exported_GitVersionHash_HexTo10_Case1      : ${exported_GitVersionHash_HexTo10_Case1}"
+
+  # 再轉成 10 進制
+  exported_GitVersionHash_HexTo10_Case1=`echo "ibase=16 ; ${exported_GitVersionHash_HexTo10_Case1}" | bc`
+
+  # 另一種寫法
+  # exported_GitVersionHash_HexTo10_Case1=$(echo "ibase=16 ; ${exported_GitVersionHash_HexTo10_Case1}" | bc)
+
+  exported_GitVersionHash_HexTo10_Case2="$((16#${exported_GitVersionHash}))"
+
+  echo
+  echo "============= Value : Begin ============="
+  echo "exported_GitVersionHash_HexTo10_Case1      : ${exported_GitVersionHash_HexTo10_Case1}"
+
+  echo "exported_GitVersionHash_HexTo10_Case2      : ${exported_GitVersionHash_HexTo10_Case2}"
+
+  echo "============= Value : End ============="
+
+  echo
+
+  ```
+
+- dump log :
+
+  ``` log
+  exported_GitVersionHash_HexTo10_Case1      : 4C5BA76EEB32E
+
+  ============= Value : Begin =============
+  exported_GitVersionHash_HexTo10_Case1      : 1343304556786478
+  exported_GitVersionHash_HexTo10_Case2      : 1343304556786478
+  ============= Value : End =============
+  ```
+
 ---
 
 ## 參考

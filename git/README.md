@@ -6,7 +6,13 @@
 
 ---
 
-- [Git Commit Version](./GitCommitVersion/README.md)
+- [Git Commit Short Version](./GitCommitShortVersion/README.md)
 
 - [Git Submodule Relative Path](./GitSubmoduleRelativePath/README.md)
   > 使用 submodule 設定時遇到不同登入方式的衝突問題，可使用 relative path 設定處理...
+
+---
+
+[=> Top](#git)
+
+[=> Go Back](../README.md)
